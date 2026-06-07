@@ -1,0 +1,65 @@
+/*Variables para el estilo*/
+:root {
+    --green-primary: #6baf92;
+    --green-light: #a8d5ba;
+    --brown-light: #dcc9a9;
+    --brown-soft: #c7b299;
+    --white: #ffffff;
+    --background: #f7f5f0;
+    --text: #333333;
+}
+
+/*Contenido General*/
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/*Contenedor General*/
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/*Navbar*/
+.navbar {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 100px;
+}
+
+.menu {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--green-primary);
+    font-weight: bold;
+    padding: 8px 10px;
+    border-radius: 6px;
+
+}
+
+.menu a:hover {
+    color: var(--text);
+    background-color: var(--green-primary);
+
+}
