@@ -1,50 +1,28 @@
 PetsFood/
 │
 ├── index.html
+├── catalogo.html
+├── solicitudes.html
 │
-├── pages/
-│   ├── catalogo.html
-│   └── solicitudes.html
+├── css/
+│   └── style.css
 │
-├── assets/
+├── js/
+│   ├── catalogo.js
+│   ├── solicitudes.js
+│   └── main.js
 │
-│   ├── css/
-│   │
-│   │   ├── base/
-│   │   │   ├── reset.css
-│   │   │   ├── variables.css
-│   │   │   └── global.css
-│   │   │
-│   │   ├── layout/
-│   │   │   ├── header.css
-│   │   │   ├── navbar.css
-│   │   │   └── footer.css
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── home.css
-│   │   │   ├── catalogo.css
-│   │   │   └── solicitudes.css
-│   │   │
-│   │   └── components/
-│   │       ├── cards.css
-│   │       ├── buttons.css
-│   │       └── forms.css
-│   │
-│   ├── js/
-│   │   ├── app.js
-│   │   ├── catalogo.js
-│   │   ├── solicitudes.js
-│   │   └── local-storage.js
-│   │
-│   ├── data/
-│   │   └── productos.json
-│   │
-│   └── images/
-│       │
-│       ├── logo/
-│       │   └── logo.webp
-│       │
-│       ├── banners/
-│       └── products/
+├── data/
+│   └── productos.json
+│
+├── img/
+│   ├── logo.png
+│   ├── banner.jpg
+│   └── productos/
+│       ├── perro1.jpg
+│       ├── perro2.jpg
+│       ├── gato1.jpg
+│       └── ave1.jpg
 │
 └── docs/
+    └── Avance1.pdf
