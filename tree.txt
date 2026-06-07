@@ -1,0 +1,50 @@
+PetsFood/
+│
+├── index.html
+│
+├── pages/
+│   ├── catalogo.html
+│   └── solicitudes.html
+│
+├── assets/
+│
+│   ├── css/
+│   │
+│   │   ├── base/
+│   │   │   ├── reset.css
+│   │   │   ├── variables.css
+│   │   │   └── global.css
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── header.css
+│   │   │   ├── navbar.css
+│   │   │   └── footer.css
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── home.css
+│   │   │   ├── catalogo.css
+│   │   │   └── solicitudes.css
+│   │   │
+│   │   └── components/
+│   │       ├── cards.css
+│   │       ├── buttons.css
+│   │       └── forms.css
+│   │
+│   ├── js/
+│   │   ├── app.js
+│   │   ├── catalogo.js
+│   │   ├── solicitudes.js
+│   │   └── local-storage.js
+│   │
+│   ├── data/
+│   │   └── productos.json
+│   │
+│   └── images/
+│       │
+│       ├── logo/
+│       │   └── logo.webp
+│       │
+│       ├── banners/
+│       └── products/
+│
+└── docs/
