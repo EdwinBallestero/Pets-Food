@@ -2,6 +2,9 @@
 :root {
     --green-primary: #6baf92;
     --green-light: #a8d5ba;
+    --green-logo: #2D6F69;
+    --green-logo2:#178236;
+    --orange-slogan: #FCB103;
     --brown-light: #dcc9a9;
     --brown-soft: #c7b299;
     --white: #ffffff;
@@ -13,7 +16,13 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -22,11 +31,20 @@ body {
     color: var(--text);
 }
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
 /*Contenedor General*/
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    
 }
 
 /*Navbar*/
@@ -35,23 +53,48 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 50px;
+    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);*/
+    border-bottom: 2px solid var(--green-logo2  );
 }
 
 .logo {
     width: 100px;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.texto-logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.p-nombre {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--green-logo);
+    margin: 0;
+   
+}
+
+.p-slogan {
+    font-size: 0.95rem;
+    color: var(--orange-slogan);
+    margin: 0;
+}
+
+
 .menu {
     display: flex;
     gap: 16px;
-    list-style: none;
 }
 
 .menu a {
-    text-decoration: none;
-    color: var(--green-primary);
+    color: var(--green-logo);
     font-weight: bold;
     padding: 8px 10px;
     border-radius: 6px;
@@ -59,7 +102,163 @@ body {
 }
 
 .menu a:hover {
-    color: var(--text);
-    background-color: var(--green-primary);
+    color: var(--white);
+    background-color: var(--green-logo);
 
+}
+
+/*Hero*/
+.hero {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url("../img/banner6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 200px 50px;
+     border-bottom: 2px solid var(--green-logo2);
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+    color: var(--green-logo);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--white)
+}
+
+
+/* Boton Catálogo*/
+.btn {
+    display: inline-block;
+    background-color: var(--green-logo);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--white);
+    color: var(--green-logo);
+}
+
+
+/*Secciones*/
+section {
+    padding: 70px 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--green-logo);
+}
+
+section p {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    color: var(--text);
+}
+
+/*Beneficios*/
+.cards {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    background-color: var(--white);
+    width: 300px;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card h3 {
+    color: var(--green-logo);
+    margin-bottom: 1rem;
+}
+
+
+/*Footer*/
+footer {
+    background-color: var(--green-logo);
+    color: var(--white);
+    padding: 35px 0;
+    text-align: center;
+    clear: both;
+}
+
+/*.footer-logo {
+    width: 80px;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+
+footer a {
+    color: #90e0ef;
+    
+}
+
+footer a:hover {
+    color: white;
+
+}
+
+footer ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+footer li {
+    margin-bottom: 8px;
+}
+
+footer h4 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+footer address {
+    font-style: normal;
+    margin-bottom: 15px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.icon-whatsapp {
+    width: 40px;
+}
+
+.icon-whatsapp:hover {
+    transform: scale(1.1);
 }
