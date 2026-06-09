@@ -78,7 +78,6 @@ ul {
     font-weight: bold;
     color: var(--green-logo);
     margin: 0;
-   
 }
 
 .p-slogan {
@@ -119,7 +118,7 @@ ul {
     background-size: cover;
     background-position: center;
     padding: 200px 50px;
-     border-bottom: 2px solid var(--green-logo2);
+    border-bottom: 2px solid var(--green-logo2);
 }
 
 .hero h1 {
@@ -255,10 +254,10 @@ footer address {
     font-weight: bold;
 }
 
-.icon-whatsapp {
+.icon-footer {
     width: 40px;
 }
 
-.icon-whatsapp:hover {
+.icon-footer:hover {
     transform: scale(1.1);
 }
