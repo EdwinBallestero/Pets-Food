@@ -26,7 +26,7 @@ function crearTarjetaProducto(producto) {
 function renderizarProductos(productos) {
   catalogoContainer.innerHTML = '';
   if (!productos.length) {
-    catalogoContainer.innerHTML = '<p>No se encontraron productos.</p>';
+    catalogoContainer.innerHTML = '<p>Nopp se encontraron productos.</p>';
     return;
   }
   productos.forEach(producto => {
@@ -68,6 +68,7 @@ async function cargarProductos() {
 }
 
 catalogoFilter?.addEventListener('input', filtrarProductos);
+
 
 cargarProductos();
 
