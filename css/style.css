@@ -10,6 +10,7 @@
     --white: #ffffff;
     --background: #f7f5f0;
     --text: #333333;
+    --transition-smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /*Contenido General*/
@@ -17,7 +18,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 html {
@@ -29,6 +29,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--background);
     color: var(--text);
+    overflow-x: hidden;
 }
 
 a {
@@ -44,7 +45,6 @@ ul {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    
 }
 
 /*Navbar*/
@@ -54,18 +54,25 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
-    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);*/
-    border-bottom: 2px solid var(--green-logo2  );
+    border-bottom: 2px solid var(--green-logo2);
+    position: relative;
+    z-index: 10;
 }
 
 .logo {
     width: 100px;
+    transition: transform 0.4s var(--transition-smooth);
+}
+
+.logo-container:hover .logo {
+    transform: rotate(-5deg) scale(1.05);
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 15px;
+    cursor: pointer;
 }
 
 .texto-logo {
@@ -86,7 +93,6 @@ ul {
     margin: 0;
 }
 
-
 .menu {
     display: flex;
     gap: 16px;
@@ -97,23 +103,22 @@ ul {
     font-weight: bold;
     padding: 8px 10px;
     border-radius: 6px;
-
+    transition: all 0.3s ease;
 }
 
 .menu a:hover {
     color: var(--white);
     background-color: var(--green-logo);
-
+    transform: translateY(-2px);
 }
 
 /*Hero*/
 .hero {
-
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url("../img/banner6.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("../img/banner6.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -122,16 +127,17 @@ ul {
 }
 
 .hero h1 {
-    margin-bottom: 1rem;
-    color: var(--green-logo);
+    margin-bottom: 1.2rem;
+    color: var(--white);
+    font-size: 2.5rem;
 }
 
 .hero p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
-    color: var(--white)
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
-
 
 /* Boton Catálogo*/
 .btn {
@@ -141,14 +147,22 @@ ul {
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 10px;
-    transition: 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s var(--transition-smooth);
 }
 
 .btn:hover {
     background-color: var(--white);
     color: var(--green-logo);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Animación sutil constante para llamar a la acción en el Hero */
+.btn-hero {
+    animation: pulse 2.5s infinite ease-in-out;
+}
 
 /*Secciones*/
 section {
@@ -159,6 +173,27 @@ section h2 {
     text-align: center;
     margin-bottom: 2rem;
     color: var(--green-logo);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Línea decorativa sutil debajo de los títulos */
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--orange-slogan);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+section:hover h2::after {
+    width: 80px;
 }
 
 section p {
@@ -166,57 +201,62 @@ section p {
     max-width: 800px;
     margin: auto;
     color: var(--text);
+    line-height: 1.6;
 }
 
-/*Beneficios*/
+/*Beneficios (Cards)*/
 .cards {
-    margin-top: 2rem;
+    margin-top: 3rem;
     display: flex;
     gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
-
 }
 
 .card {
     background-color: var(--white);
     width: 300px;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     text-align: center;
+    transition: all 0.4s var(--transition-smooth);
+    border-top: 4px solid transparent;
+}
+
+/* Efecto Hover Moderno para las Tarjetas */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(45, 111, 105, 0.15);
+    border-top: 4px solid var(--green-logo);
 }
 
 .card h3 {
     color: var(--green-logo);
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
 }
 
+.card:hover h3 {
+    color: var(--green-logo2);
+}
 
 /*Footer*/
 footer {
     background-color: var(--green-logo);
     color: var(--white);
-    padding: 35px 0;
+    padding: 40px 0;
     text-align: center;
     clear: both;
 }
 
-/*.footer-logo {
-    width: 80px;
-    margin-bottom: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-}*/
-
 footer a {
     color: #90e0ef;
-    
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
     color: white;
-
 }
 
 footer ul {
@@ -231,11 +271,13 @@ footer li {
 footer h4 {
     color: white;
     margin-bottom: 15px;
+    font-size: 1.2rem;
 }
 
 footer address {
     font-style: normal;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .footer-social {
@@ -243,21 +285,65 @@ footer address {
     justify-content: center;
     align-items: center;
     list-style: none;
-    gap: 20px;
+    gap: 25px;
 }
 
 .footer-social a {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     color: var(--white);
     font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.3s var(--transition-smooth);
 }
 
 .icon-footer {
-    width: 40px;
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    transition: transform 0.4s var(--transition-smooth);
 }
 
-.icon-footer:hover {
-    transform: scale(1.1);
+/* Animaciones en redes sociales al pasar el mouse */
+.footer-social a:hover {
+    transform: translateY(-4px);
+}
+
+.footer-social a:hover .icon-footer {
+    transform: scale(1.15) rotate(8deg);
+}
+
+/* ==========================================================================
+   ANIMACIONES KEYFRAMES
+   ========================================================================== */
+
+/* Entrada suave desde abajo hacia arriba al cargar la página */
+.fade-in-up {
+    animation: fadeInUp 1s var(--transition-smooth) both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Latido suave para el botón de llamado a la acción */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 6px rgba(45, 111, 105, 0.2);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(45, 111, 105, 0.6);
+    }
+    100% {
+        box-shadow: 0 4px 6px rgba(45, 111, 105, 0.2);
+    }
 }
