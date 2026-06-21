@@ -16,13 +16,10 @@ PetsFood/
 │   └── productos.json
 │
 ├── img/
-│   ├── logo.png
-│   ├── banner.jpg
-│   └── productos/
-│       ├── perro1.jpg
-│       ├── perro2.jpg
-│       ├── gato1.jpg
-│       └── ave1.jpg
-│
-└── docs/
-    └── Avance1.pdf
+    ├── logo.png
+    ├── banner.jpg
+    └── productos/
+        ├── perro1.jpg
+        ├── perro2.jpg
+        ├── gato1.jpg
+        └── ave1.jpg
