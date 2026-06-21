@@ -241,6 +241,63 @@ section p {
     color: var(--green-logo2);
 }
 
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  /* cambiar el auto fit si quiere más tarjetas */
+    gap: 1.75rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    text-align: left;
+    padding: 2rem;
+}
+
+.product-sku {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.product-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: var(--green-logo);
+}
+
+.search-bar {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.95rem 1rem;
+    border: 2px solid var(--green-logo);
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: var(--green-logo2);
+    box-shadow: 0 0 12px rgba(45, 111, 105, 0.15);
+}
+
+.error-msg {
+    color: #bb0a1e;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #ffe5e5;
+    border-radius: 12px;
+}
+
 /*Footer*/
 footer {
     background-color: var(--green-logo);
