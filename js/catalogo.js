@@ -15,9 +15,7 @@ function crearTarjetaProducto(producto) {
     <p class="product-sku"><strong>SKU:</strong> ${producto.sku}</p>
     <p>${producto.detalle}</p>
     <div class="product-meta">
-      <span><strong>Precio:</strong> ${formatearPrecio(producto.precio)}</span>
-      <span><strong>Cantidad:</strong> ${producto.cantidad}</span>
-      <span><strong>Vence:</strong> ${producto.fecha_vencimiento}</span>
+    <span><strong>Precio:</strong> ${formatearPrecio(producto.precio)}</span>
     </div>
   `;
   return card;

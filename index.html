@@ -18,10 +18,12 @@
                 </div>
             </div>
             <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="solicitudes.html">Solicitudes</a></li>
+                <li class="nav-home"><a href="index.html">Inicio</a></li>
+                <li class="nav-catalog"><a href="catalogo.html">Catálogo</a></li>
+                <li class="nav-solicitudes"><a href="solicitudes.html">Solicitudes</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li class="nav-login"><a href="login.html">Login</a></li>
+                <li class="nav-logout" style="display:none"><a href="#" id="logoutLink">Cerrar sesión</a></li>
             </ul>
         </nav>
     </header>
@@ -33,7 +35,7 @@
             <div class="container fade-in-up">
                 <h1>Alimentación saludable para tus mascotas</h1>
                 <p>Encuentra los mejores alimentos de calidad para tus mascotas.</p>
-                <a href="catalogo.html" class="btn btn-hero">Ver Catálogo</a>
+                <a href="catalogo.html" class="btn btn-hero ver-catalogo-btn">Ver Catálogo</a>
             </div>
         </section>
 
@@ -102,5 +104,6 @@
             <p>© 2026 PetsFood - Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="js/auth.js"></script>
 </body>
 </html>
