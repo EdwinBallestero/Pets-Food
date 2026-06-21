@@ -1,71 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LukiPao | Solicitudes</title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!--Navabar-->
     <header>
         <nav class="navbar">
-        <div class="logo-container">
-            <img src="img/logo.webp" alt="Logo Empresa" class="logo" />
-            <div class="texto-logo">
-                <p class="p-nombre"><strong>Alimentos LukiPao</strong></p>
-                <p class="p-slogan"><strong>Sabor que mueve colitas</strong></p>
+            <div class="logo-container">
+                <img src="img/logo.webp" alt="Logo Empresa" class="logo" />
+                <div class="texto-logo">
+                    <p class="p-nombre"><strong>Alimentos LukiPao</strong></p>
+                    <p class="p-slogan"><strong>Sabor que mueve colitas</strong></p>
+                </div>
             </div>
-        </div>
-        <ul class="menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="solicitudes.html">Solicitudes</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="solicitudes.html">Solicitudes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
         </nav>
     </header>
-    <main>
-        <div class="container">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
 
+    <main>
+        <section class="section-animate">
+            <div class="container">
+                <h2>Solicitudes / Pedidos</h2>
+                <p>Selecciona productos y cantidades. El catálogo se actualizará en localStorage cuando realices un pedido.</p>
+
+                <h3>Productos</h3>
+                <div id="solicitudProducts" class="catalogo-grid"></div>
+
+                <h3>Tu Pedido</h3>
+                <div id="solicitudCart" class="cards"></div>
+
+                <div style="margin-top:1.5rem; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                    <input id="customerName" type="text" placeholder="Nombre" style="padding:10px;border-radius:8px;" />
+                    <input id="solicitudEmail" type="email" placeholder="Correo destinatario (opcional)" style="padding:10px;border-radius:8px;" />
+                    <button id="placeOrderBtn" class="btn">Realizar Pedido</button>
+                    <button id="sendEmailBtn" class="btn">Enviar por Email</button>
+                    <button id="clearStorageBtn" class="btn" style="background:#ccc;color:#333;">Restaurar catálogo</button>
+                </div>
+
+                <p style="margin-top:1rem;color:#666;font-size:0.95rem;">Nota: Para enviar por correo se abrirá el cliente de correo local (mailto:). Si quieres envío automático necesitas un backend.</p>
+
+            </div>
+        </section>
     </main>
+
     <footer id="contacto">
         <h4>Contacto</h4>
         <address>
-        Alimentos LukiPao<br />
-        Correo: Cuadraslalupa@gmail.com<br />
-        Tambor Alajuela, 100 metros noroeste del ebais.
+            Alimentos LukiPao<br />
+            Correo: Cuadraslalupa@gmail.com<br />
+            Tambor Alajuela, 100 metros noroeste del ebais.
         </address>
         <h4>Enlaces rápidos</h4>
         <ul class="footer-social">
@@ -77,5 +68,7 @@
             <p>© 2026 PetsFood - Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script src="js/solicitudes.js"></script>
 </body>
 </html>
