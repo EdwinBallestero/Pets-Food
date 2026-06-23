@@ -1,4 +1,4 @@
-const PRODUCTS_KEY = 'productos_local';
+const PRODUCTS_KEY = 'productos_v1';
 const ORDERS_KEY = 'pedidos_local';
 let productos = [];
 let cart = [];
@@ -12,6 +12,15 @@ async function init() {
   renderProducts();
   renderCart();
   attachListeners();
+  window.addEventListener('storage', handleStorageUpdate);
+}
+
+function handleStorageUpdate(event) {
+  if (event.key === PRODUCTS_KEY) {
+    const updated = JSON.parse(event.newValue || '[]');
+    productos = Array.isArray(updated) ? updated : productos;
+    renderProducts();
+  }
 }
 
 async function loadProducts() {
@@ -19,6 +28,22 @@ async function loadProducts() {
   if (stored) {
     productos = JSON.parse(stored);
     return;
+  }
+
+  // Soporte de migración desde la clave antigua
+  const OLD_KEY = 'productos_catalogo_local';
+  const rawOld = localStorage.getItem(OLD_KEY);
+  if (rawOld) {
+    try {
+      const parsed = JSON.parse(rawOld);
+      productos = Array.isArray(parsed) ? parsed : [];
+      // guardar bajo la nueva clave y eliminar la antigua
+      localStorage.setItem(PRODUCTS_KEY, JSON.stringify(productos));
+      localStorage.removeItem(OLD_KEY);
+      return;
+    } catch (e) {
+      console.warn('Error parseando productos desde clave antigua', e);
+    }
   }
   try {
     const resp = await fetch('data/productos.json');
