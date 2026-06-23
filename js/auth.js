@@ -50,14 +50,17 @@ function setupAuthNav() {
   const userLabel = document.getElementById('loggedUserLabel');
 
   catalogItems.forEach(item => {
-    item.style.display = user?.role === 'admin' ? '' : 'none';
+    item.style.display = user ? '' : 'none';
   });
-  catalogButtons.forEach(button => {
-    button.style.display = user?.role === 'admin' ? '' : 'none';
-  });
+  
   solicitudesItems.forEach(item => {
     item.style.display = user ? '' : 'none';
   });
+  const addProductBtn = document.querySelector('.add-product-btn');
+  if (addProductBtn) {
+    addProductBtn.style.display = user?.role === 'admin' ? '' : 'none';
+  }
+
   loginItems.forEach(item => {
     item.style.display = user ? 'none' : '';
   });
@@ -117,7 +120,7 @@ function initAuth() {
     redirectIfLoggedIn();
   }
   if (page === 'catalogo.html') {
-    requireAuth(['admin']);
+    requireAuth(['admin', 'cliente']);
   }
   if (page === 'solicitudes.html') {
     requireAuth(['admin', 'cliente']);

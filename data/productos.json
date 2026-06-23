@@ -4,79 +4,69 @@
     "nombre": "Alimento LukiPao Cachorros",
     "detalle": "Sabor pollo y leche, bulto de 3kg para crecimiento sano.",
     "precio": 8500,
-    "cantidad": 18,
-    "fecha_vencimiento": "2027-04-15"
+    "cantidad": 18
   },
   {
     "sku": "ALM-PER-002",
     "nombre": "Alimento LukiPao Adultos",
     "detalle": "Sabor carne y vegetales, bulto de 4kg con omega 3 y 6.",
     "precio": 10500,
-    "cantidad": 12,
-    "fecha_vencimiento": "2027-06-20"
+    "cantidad": 12
   },
   {
     "sku": "ALM-GAT-003",
     "nombre": "Alimento LukiPao Gatos Esterilizados",
     "detalle": "Sabor salmón, bulto de 2kg, control de peso y tracto urinario.",
     "precio": 7800,
-    "cantidad": 10,
-    "fecha_vencimiento": "2027-03-10"
+    "cantidad": 10
   },
   {
     "sku": "ALM-GAT-004",
     "nombre": "Alimento LukiPao Gatitos",
     "detalle": "Sabor pollo y pescado, bulto de 1.5kg con alta proteína.",
     "precio": 6200,
-    "cantidad": 14,
-    "fecha_vencimiento": "2027-05-05"
+    "cantidad": 14
   },
   {
     "sku": "SNA-PER-005",
     "nombre": "Galletas LukiPao Crujientes",
     "detalle": "Snack horneado sabor a tocino para entrenamiento, bolsa de 250g.",
     "precio": 2500,
-    "cantidad": 25,
-    "fecha_vencimiento": "2026-12-18"
+    "cantidad": 25
   },
   {
     "sku": "SNA-GAT-006",
     "nombre": "LukiPao Bites de Salmón",
     "detalle": "Premios suaves para gato, previene bolas de pelo, bolsa de 100g.",
     "precio": 1800,
-    "cantidad": 30,
-    "fecha_vencimiento": "2026-11-30"
+    "cantidad": 30
   },
   {
     "sku": "ALM-PER-007",
     "nombre": "Alimento Húmedo Perro - Res",
     "detalle": "Lata de 340g, carne texturizada en salsa premium.",
     "precio": 1500,
-    "cantidad": 20,
-    "fecha_vencimiento": "2028-01-22"
+    "cantidad": 20
   },
   {
     "sku": "ALM-GAT-008",
     "nombre": "Alimento Húmedo Gato - Atún",
     "detalle": "Lata de 150g, lomo de atún natural libre de granos.",
     "precio": 1100,
-    "cantidad": 22,
-    "fecha_vencimiento": "2028-02-14"
+    "cantidad": 22
   },
   {
     "sku": "SNA-PER-009",
     "nombre": "Hueso de Carnaza LukiPao",
     "detalle": "Snack dental masticable para perros grandes, unidad.",
     "precio": 3200,
-    "cantidad": 16,
-    "fecha_vencimiento": "2029-06-01"
+    "cantidad": 16
   },
   {
     "sku": "ALM-PER-010",
     "nombre": "Alimento LukiPao Senior 7+",
     "detalle": "Para perros mayores, bulto de 3kg con glucosamina para articulaciones.",
     "precio": 11200,
-    "cantidad": 9,
-    "fecha_vencimiento": "2027-02-28"
+    "cantidad": 9
   }
 ]

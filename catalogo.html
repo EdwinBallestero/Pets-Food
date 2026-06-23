@@ -17,6 +17,7 @@
                     <p class="p-slogan"><strong>Sabor que mueve colitas</strong></p>
                 </div>
             </div>
+            <!-- Botón pequeño para ir al mantenimiento de productos (se mueve junto al filtro) -->
             <ul class="menu">
                 <li class="nav-home"><a href="index.html">Inicio</a></li>
                 <li class="nav-catalog"><a href="catalogo.html">Catalogo</a></li>
@@ -34,7 +35,11 @@
                 <p>Selecciona el mejor alimento o snack para tu mascota entre nuestros productos destacados.</p>
                 <div class="search-bar">
                     <input id="catalogoFilter" type="search" placeholder="Buscar por nombre o SKU" />
+                    <a href="productos.html" class="add-product-btn" title="Agregar Productos" aria-label="Agregar Productos">+</a>
                 </div>
+
+                <!-- Vista solo lectura del catálogo (CRUD movido a productos.html) -->
+
                 <div id="catalogoCards" class="cards catalogo-grid"></div>
             </div>
         </section>
@@ -53,7 +58,7 @@
             <li><a href="https://www.facebook.com/share/1E3uy9REUY/" target="_blank"><img src="img/iconfacebook.png" alt="Facebook" class="icon-footer"/>Facebook</a></li>
         </ul>
         <div>
-            <p>(c) 2026 PetsFood - Todos los derechos reservados.</p>
+            <p>© 2026 PetsFood - Todos los derechos reservados.</p>
         </div>
     </footer>
     <script src="js/auth.js"></script>

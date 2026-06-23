@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mantenimiento de Productos</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="img/logo.webp" alt="Logo Empresa" class="logo" />
+                <div class="texto-logo">
+                    <p class="p-nombre"><strong>Alimentos LukiPao</strong></p>
+                    <p class="p-slogan"><strong>Sabor que mueve colitas</strong></p>
+                </div>
+            </div>
+            <ul class="menu">
+                <li class="nav-home"><a href="index.html">Inicio</a></li>
+                <li class="nav-catalog"><a href="catalogo.html">Catalogo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <h2>Mantenimiento de Productos</h2>
+                <p style="text-align:center;">Aquí puedes crear, editar y eliminar productos.</p>
+
+                <!-- Header: filtro y botón crear -->
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:0.5rem;">
+                    <h3 style="margin:0;">Lista de Productos</h3>
+                    <div style="display:flex; gap:8px; align-items:center;">
+                        <input id="filterProducts" type="search" placeholder="Filtrar por nombre o SKU" style="padding:8px;border:1px solid #ddd;border-radius:8px;" />
+                        <button id="openCreateBtn" class="actions-btn create-btn" title="Crear producto" aria-label="Crear producto">
+                            <!-- plus icon -->
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div style="overflow:auto;">
+                    <table id="productosTable" class="products-table">
+                        <thead>
+                            <tr>
+                                <th>SKU</th>
+                                <th>Nombre</th>
+                                <th>Detalle</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <!-- Modal para crear/editar -->
+                <div id="productModal" class="modal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <button id="modalClose" class="modal-close" aria-label="Cerrar">×</button>
+                        <h3 id="formTitle">Crear producto</h3>
+                        <form id="productoForm" style="display:grid; gap:0.75rem;">
+                            <input id="sku" type="text" placeholder="SKU" required />
+                            <input id="nombre" type="text" placeholder="Nombre" required />
+                            <input id="detalle" type="text" placeholder="Detalle" />
+                            <input id="precio" type="number" placeholder="Precio" min="0" step="0.01" required />
+                            <input id="cantidad" type="number" placeholder="Cantidad" min="0" required />
+                            <div style="display:flex; gap:12px; align-items:center; justify-content:flex-end; margin-top:6px;">
+                                <button type="button" id="cancelEdit" class="btn" style="background:#ccc;color:#333;display:none;">Cancelar</button>
+                                <button type="submit" class="btn">Guardar</button>
+                                <span id="formMsg" style="font-size:0.95rem;color:var(--text);"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h4>Mantenimiento de Productos</h4>
+        <p>Alimentos LukiPao</p>
+        <br>
+        <div>
+            <p>© 2026 PetsFood - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="toastNotification" class="toast-notification" role="status" aria-live="polite"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/productos.js"></script>
+</body>
+</html>
