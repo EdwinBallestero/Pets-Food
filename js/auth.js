@@ -11,18 +11,18 @@ async function loadAuthUsers() {
 
 function getStoredUser() {
   try {
-    return JSON.parse(localStorage.getItem(AUTH_USER_KEY));
+    return JSON.parse(sessionStorage.getItem(AUTH_USER_KEY));
   } catch (e) {
     return null;
   }
 }
 
 function saveStoredUser(user) {
-  localStorage.setItem(AUTH_USER_KEY, JSON.stringify(user));
+  sessionStorage.setItem(AUTH_USER_KEY, JSON.stringify(user));
 }
 
 function clearStoredUser() {
-  localStorage.removeItem(AUTH_USER_KEY);
+  sessionStorage.removeItem(AUTH_USER_KEY);
 }
 
 async function loginUser(username, password) {
