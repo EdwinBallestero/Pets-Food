@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LukiPao | Solicitudes</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init({ publicKey: 'JYJ7-RU_9gIYtj_tp' });
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -28,29 +34,89 @@
     </header>
 
     <main>
-        <section class="section-animate">
-            <div class="container">
-                <h2>Solicitudes / Pedidos</h2>
-                <p>Selecciona productos y cantidades. El catálogo se actualizará en localStorage cuando realices un pedido.</p>
-
-                <h3>Productos</h3>
-                <div id="solicitudProducts" class="catalogo-grid"></div>
-
-                <h3>Tu Pedido</h3>
-                <div id="solicitudCart" class="cards"></div>
-
-                <div style="margin-top:1.5rem; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-                    <input id="customerName" type="text" placeholder="Nombre" style="padding:10px;border-radius:8px;" />
-                    <input id="solicitudEmail" type="email" placeholder="Correo destinatario (opcional)" style="padding:10px;border-radius:8px;" />
-                    <button id="placeOrderBtn" class="btn">Realizar Pedido</button>
-                    <button id="sendEmailBtn" class="btn">Enviar por Email</button>
-                    <button id="clearStorageBtn" class="btn" style="background:#ccc;color:#333;">Restaurar catálogo</button>
+        <div class="order-form-container">
+            <!-- Sección del Formulario -->
+            <div class="form-section">
+                <div class="form-group">
+                    <h3>Datos del Cliente</h3>
+                    <div class="form-row">
+                        <div class="form-input">
+                            <label for="customerName">Nombre:</label>
+                            <input type="text" id="customerName" placeholder="Nombre" required />
+                        </div>
+                        <div class="form-input">
+                            <label for="customerLastName">Apellidos:</label>
+                            <input type="text" id="customerLastName" placeholder="Apellidos" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-input">
+                            <label for="customerCedula">Cédula:</label>
+                            <input type="text" id="customerCedula" placeholder="Cédula" required />
+                        </div>
+                        <div class="form-input">
+                            <label for="customerPhone">Teléfono:</label>
+                            <input type="tel" id="customerPhone" placeholder="Teléfono" required />
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <label for="customerAddress">Dirección:</label>
+                        <input type="text" id="customerAddress" placeholder="Dirección" required />
+                    </div>
+                    <div class="form-input">
+                        <label for="customerEmail">Correo Electrónico:</label>
+                        <input type="email" id="customerEmail" placeholder="correo@example.com" required />
+                    </div>
                 </div>
 
-                <p style="margin-top:1rem;color:#666;font-size:0.95rem;">Nota: Para enviar por correo se abrirá el cliente de correo local (mailto:). Si quieres envío automático necesitas un backend.</p>
-
+                <div class="form-group">
+                    <h3>Seleccionar Productos</h3>
+                    <div class="form-row">
+                        <div class="form-input">
+                            <label for="productSelect">Producto:</label>
+                            <select id="productSelect" required>
+                                <option value="">-- Seleccionar producto --</option>
+                            </select>
+                        </div>
+                        <div class="form-input">
+                            <label for="productQuantity">Cantidad:</label>
+                            <input type="number" id="productQuantity" min="1" value="1" required />
+                        </div>
+                    </div>
+                    <div id="stockInfo" class="stock-info"></div>
+                    <button id="addProductBtn" class="btn-primary">Agregar al Pedido</button>
+                </div>
             </div>
-        </section>
+
+            <!-- Sección de la Tabla de Pedido -->
+            <div class="table-section">
+                <h3>Detalle del Pedido</h3>
+                <div id="emptyCartMessage" class="empty-cart-message">
+                    <p>No hay productos en el pedido. <br>Selecciona productos para comenzar.</p>
+                </div>
+                <table id="orderTable" class="order-table" style="display:none">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Producto</th>
+                            <th>Precio Unitario</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderTableBody">
+                    </tbody>
+                </table>
+                <div id="totalAmount" class="order-summary" style="display:none">
+                    <strong>Total del Pedido: ₡ 0</strong>
+                </div>
+                <div class="action-buttons">
+                    <button id="placeOrderBtn" class="btn-primary">Realizar Pedido</button>
+                    <button id="clearCartBtn" class="btn-secondary">Limpiar Pedido</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer id="contacto">
