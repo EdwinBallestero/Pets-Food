@@ -1,3 +1,6 @@
+// Inicializar EmailJS
+emailjs.init({ publicKey: 'JYJ7-RU_9gIYtj_tp' });
+
 const PRODUCTS_KEY = 'productos_v1';
 const ORDERS_KEY = 'pedidos_local';
 
