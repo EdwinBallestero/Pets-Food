@@ -54,7 +54,7 @@ function renderProductos(list) {
         tbody.appendChild(tr);
     });
 }
-
+//Busca el índice de un producto en la lista por su SKU.
 function findIndexBySku(list, sku) {
     return list.findIndex((x) => x.sku === sku);
 }
