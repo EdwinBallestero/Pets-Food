@@ -68,5 +68,12 @@
     "detalle": "Para perros mayores, bulto de 3kg con glucosamina para articulaciones.",
     "precio": 11200,
     "cantidad": 9
+  },
+  {
+    "sku": "ALM-PER-012",
+    "nombre": "Alimento LukiPao Adultos",
+    "detalle": "Para perros mayores, bulto de 3kg con glucosamina para articulaciones.",
+    "precio": 7500,
+    "cantidad": 10
   }
 ]
