@@ -17,7 +17,13 @@
                     <p class="p-slogan"><strong>Sabor que mueve colitas</strong></p>
                 </div>
             </div>
-            <ul class="menu">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
+            <label class="menu-toggle" for="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul id="main-menu" class="menu">
                 <li class="nav-home"><a href="index.html">Inicio</a></li>
                 <li class="nav-catalog"><a href="catalogo.html">Catálogo</a></li>
                 <li class="nav-solicitudes"><a href="solicitudes.html">Solicitudes</a></li>
@@ -63,7 +69,6 @@
                         <input type="email" id="customerEmail" placeholder="correo@example.com" required />
                     </div>
                 </div>
-
                 <div class="form-group">
                     <h3>Seleccionar Productos</h3>
                     <div class="form-row">
@@ -82,7 +87,6 @@
                     <button id="addProductBtn" class="btn-primary">Agregar al Pedido</button>
                 </div>
             </div>
-
             <!-- Sección de la Tabla de Pedido -->
             <div class="table-section">
                 <h3>Detalle del Pedido</h3>
@@ -113,7 +117,6 @@
             </div>
         </div>
     </main>
-
     <footer id="contacto">
         <h4>Contacto</h4>
         <address>
