@@ -16,7 +16,13 @@
                     <p class="p-slogan"><strong>Sabor que mueve colitas</strong></p>
                 </div>
             </div>
-            <ul class="menu">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
+            <label class="menu-toggle" for="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul id="main-menu" class="menu">
                 <li class="nav-home"><a href="index.html">Inicio</a></li>
                 <li class="nav-catalog"><a href="catalogo.html">Catalogo</a></li>
             </ul>
@@ -28,7 +34,6 @@
             <div class="container">
                 <h2>Mantenimiento de Productos</h2>
                 <p style="text-align:center;">Aquí puedes crear, editar y eliminar productos.</p>
-
                 <!-- Header: filtro y botón crear -->
                 <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:0.5rem;">
                     <h3 style="margin:0;">Lista de Productos</h3>
@@ -40,7 +45,6 @@
                         </button>
                     </div>
                 </div>
-
                 <div style="overflow:auto;">
                     <table id="productosTable" class="products-table">
                         <thead>
@@ -78,7 +82,6 @@
             </div>
         </section>
     </main>
-
     <footer id="contacto">
         <h4>Mantenimiento de Productos</h4>
         <p>Alimentos LukiPao</p>
@@ -87,9 +90,7 @@
             <p>© 2026 PetsFood - Todos los derechos reservados.</p>
         </div>
     </footer>
-
     <div id="toastNotification" class="toast-notification" role="status" aria-live="polite"></div>
-
     <script src="js/auth.js"></script>
     <script src="js/productos.js"></script>
 </body>

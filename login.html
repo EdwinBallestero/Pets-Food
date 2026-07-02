@@ -16,7 +16,13 @@
                     <p class="p-slogan"><strong>Sabor que mueve colitas</strong></p>
                 </div>
             </div>
-            <ul class="menu">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
+            <label class="menu-toggle" for="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul id="main-menu" class="menu">
                 <li class="nav-home"><a href="index.html">Inicio</a></li>
                 <li class="nav-catalog"><a href="catalogo.html">Catálogo</a></li>
                 <li class="nav-solicitudes"><a href="solicitudes.html">Solicitudes</a></li>
@@ -27,7 +33,6 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <section class="section-animate">
             <div class="container">
@@ -52,12 +57,11 @@
                 </article>
                 <br>
                 <br>
-                <p>Si cuentas con un usuario, podras ver nuestro catálogo de productos
+                <p>Si cuentas con un usuario, podrás ver nuestro catálogo de productos
                     y realizar tus solicitudes o pedidos.</p>
             </div>
         </section>
     </main>
-
     <footer id="contacto">
         <h4>Contacto</h4>
         <address>
@@ -75,7 +79,6 @@
             <p>© 2026 PetsFood - Todos los derechos reservados.</p>
         </div>
     </footer>
-
     <script src="js/auth.js"></script>
     <script src="js/login.js"></script>
 </body>
